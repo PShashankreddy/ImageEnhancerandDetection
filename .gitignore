@@ -1,0 +1,13 @@
+﻿# virtual env
+venv/
+.env
+__pycache__/
+*.pyc
+
+# model/checkpoint patterns
+*.pt
+*.pth
+*.bin
+
+# IDE/editor
+.vscode/
