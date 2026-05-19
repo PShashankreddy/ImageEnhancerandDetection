@@ -1,4 +1,4 @@
-﻿# virtual env
+# virtual env
 venv/
 .env
 __pycache__/
@@ -11,3 +11,7 @@ __pycache__/
 
 # IDE/editor
 .vscode/
+
+# system
+Thumbs.db
+.DS_Store
