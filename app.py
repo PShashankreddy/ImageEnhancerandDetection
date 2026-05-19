@@ -132,7 +132,21 @@ class LPGANGenerator(nn.Module):
 # ═══════════════════════════════════════════════════════════════════════════
 
 print("Loading models...")
-yolo_model = YOLO('yolov8s.pt')
+
+def load_local_yolo(weights_path):
+    original_torch_load = torch.load
+
+    def patched_torch_load(*args, **kwargs):
+        kwargs.setdefault('weights_only', False)
+        return original_torch_load(*args, **kwargs)
+
+    try:
+        torch.load = patched_torch_load
+        return YOLO(weights_path)
+    finally:
+        torch.load = original_torch_load
+
+yolo_model = load_local_yolo('yolov8s.pt')
 gan_model = LPGANGenerator(base_ch=32, n_res=6).to(device)
 
 # Load checkpoint (robust loader: supports multiple checkpoint shapes and DataParallel 'module.' prefixes)
