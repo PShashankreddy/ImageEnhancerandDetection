@@ -1,6 +1,6 @@
-# Setup Guide (Simple)
+# Setup Guide
 
-This is the easiest way to run the project on Windows.
+This guide is for running the Flask app on Windows.
 
 ## First-Time Setup
 
@@ -51,7 +51,7 @@ python -m pip install -r requirements.txt
 python app.py
 ```
 
-6. Open browser:
+6. Open the browser:
 
 http://127.0.0.1:5000
 
@@ -62,9 +62,9 @@ http://127.0.0.1:5000
 3. Click `Process Image`.
 
 Slider tip:
-- `0-40`: natural look
-- `40-70`: balanced
-- `70-100`: strong enhancement
+- `0-40`: more natural look
+- `40-70`: balanced enhancement
+- `70-100`: stronger fog removal
 
 ## Quick Run Next Time
 
@@ -104,4 +104,11 @@ You are in CMD. Use:
 ### Port 5000 already in use
 
 Stop old process with `Ctrl + C`, then run `python app.py` again.
+
+## What The App Shows
+
+- Original image preview.
+- Enhanced image preview.
+- Detection counts for both versions.
+- PSNR, SSIM, and detection change.
 
